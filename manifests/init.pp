@@ -4,7 +4,7 @@
 # Defines the httpproxy class. Sets the $http_proxy variable to the $http_proxy
 # variable located in the params.pp. Then inherits params attributes.
 class httpproxy (
-  $http_proxy = $httpproxy::params::http_proxy,
+  $http_proxy = "${httpproxy::params::http_proxy}:${httpproxy::params::http_proxy_port}",
 ) inherits httpproxy::params {
 
 # Uses Selectors, a type of conditional statement to set the ensure parameter.

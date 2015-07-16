@@ -5,5 +5,7 @@
 class httpproxy::params {
   #### init vars ####
   $http_proxy = undef
+  $http_proxy_port = undef
+  $ensure = present
 
 }
