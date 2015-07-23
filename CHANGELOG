@@ -1,3 +1,6 @@
+2015-07-23 (0.1.0) Michael Callahan
+        * Moved profiled to its own class. Restructured proxy variables. Setup for public release.
+
 2015-07-08 (0.0.2)  Michael Callahan
         * Wrote bulk of module.
 

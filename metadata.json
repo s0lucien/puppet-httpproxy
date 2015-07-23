@@ -1,12 +1,12 @@
 {
   "name": "callahm3-miami-httpproxy",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Michael Callahan, Chris Edester",
-  "summary": "Provides a simple way to manage proxies in the profile.d",
-  "license": "MiamiUniversity-Proprietary",
-  "source": "https://gittest.mcs.miamioh.edu/callahm3/puppet-httpproxy.git",
-  "project_page": "https://gittest.mcs.miamioh.edu/callahm3/puppet-httpproxy",
-  "issues_url": "https://gittest.mcs.miamioh.edu/callahm3/puppet-httpproxy/issues",
+  "summary": "Provides a simple way to manage various proxies",
+  "license": "Apache v2",
+  "source": "https://github.com/MiamiOH/puppet-httpproxy.git",
+  "project_page": "https://github.com/MiamiOH/puppet-httpproxy",
+  "issues_url": "https://github.com/MiamiOH/puppet-httpproxy/issues",
   "tags": ["proxy","linux"],
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 4.1.0 <5.0.0"},

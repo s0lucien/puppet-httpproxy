@@ -1,23 +1,20 @@
-# server/yum.pp
+# other/yum.pp
 # Manages proxies for the yum package manager
-#
+
 # Uses the puppetlabs/inifile module
 # https://forge.puppetlabs.com/puppetlabs/inifile
-#
 
-class httpproxy::other::yum (
-  $ensure = $httpproxy::params::ensure,
-  $proxy  = "${httpproxy::params::http_proxy}:${httpproxy::params::http_proxy_port}",
-) {
+# Creates a wrapper class to use the ini resource and includes parent class.
+class httpproxy::other::yum {
+  include httpproxy
 
-  validate_string($proxy)
-
+# Writes ini settings defined in init.pp in the yum configuration file.
   ini_setting { 'yum_proxy' :
-    ensure  => $ensure,
+    ensure  => $httpproxy::ensure,
     path    => '/etc/yum.conf',
     section => 'main',
     setting => 'proxy',
-    value   => $proxy,
+    value   => $httpproxy::proxy_uri,
   }
 
 }
