@@ -11,7 +11,7 @@ class httpproxy::other::wget {
 # Writes ini settings defined in init.pp in the wget configuration file.
   ini_setting { 'wget_proxy' :
     ensure  => $httpproxy::ensure,
-    path    => '/etc/yum.conf',
+    path    => '/etc/wgetrc',
     section => "",
     setting => 'http_proxy',
     value   => $httpproxy::proxy_uri,

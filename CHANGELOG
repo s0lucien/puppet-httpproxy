@@ -1,3 +1,6 @@
+2015-07-23 (0.1.1) Michael Callahan
+        * Fixed wget path
+
 2015-07-23 (0.1.0) Michael Callahan
         * Moved profiled to its own class. Restructured proxy variables. Setup for public release.
 
