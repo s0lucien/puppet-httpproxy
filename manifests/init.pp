@@ -5,7 +5,7 @@
 class httpproxy (
   $http_proxy = undef,
   $http_proxy_port = undef,
-  $apt = undef,
+  $profiled = undef,
   $packagemanager = undef,
   $wget = undef
 ) inherits httpproxy::params {
@@ -37,16 +37,16 @@ class httpproxy (
   }
 
   # Boolean parameter for class selection
-  if $apt = true {
-    contain httpproxy::apt
+  if $profiled = true {
+    contain httpproxy::other::profiled
   }
 
   if $packagemanager = true {
-    contain httpproxy::packagehandler
+    contain httpproxy::other::packagehandler
 
   }
 
   if $wget = true {
-    contain httpproxy::wget
+    contain httpproxy::other::wget
   }
 }
