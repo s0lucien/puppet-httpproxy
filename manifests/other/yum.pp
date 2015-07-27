@@ -8,8 +8,8 @@
 class httpproxy::other::yum {
   include httpproxy
 
-# Writes ini settings defined in init.pp in the yum configuration file.
-  ini_setting { 'yum_proxy' :
+  # Writes ini settings defined in init.pp in the yum configuration file.
+  ini_setting { 'yum_proxy':
     ensure  => $httpproxy::ensure,
     path    => '/etc/yum.conf',
     section => 'main',

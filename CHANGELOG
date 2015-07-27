@@ -1,3 +1,6 @@
+2015-07-27 (0.1.2) Michael Callahan
+        * Implemented OS based package handling
+
 2015-07-23 (0.1.1) Michael Callahan
         * Fixed wget path
 

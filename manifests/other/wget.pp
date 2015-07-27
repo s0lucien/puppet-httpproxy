@@ -8,11 +8,11 @@
 class httpproxy::other::wget {
   include httpproxy
 
-# Writes ini settings defined in init.pp in the wget configuration file.
-  ini_setting { 'wget_proxy' :
+  # Writes ini settings defined in init.pp in the wget configuration file.
+  ini_setting { 'wget_proxy':
     ensure  => $httpproxy::ensure,
     path    => '/etc/wgetrc',
-    section => "",
+    section => '',
     setting => 'http_proxy',
     value   => $httpproxy::proxy_uri,
   }

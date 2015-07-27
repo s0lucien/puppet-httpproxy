@@ -1,9 +1,9 @@
 {
   "name": "MiamiOH-httpproxy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Michael Callahan, Chris Edester",
   "summary": "Provides a simple way to manage various proxies",
-  "license": "Apache v2",
+  "license": "Apache-2.0",
   "source": "https://github.com/MiamiOH/puppet-httpproxy.git",
   "project_page": "https://github.com/MiamiOH/puppet-httpproxy",
   "issues_url": "https://github.com/MiamiOH/puppet-httpproxy/issues",
@@ -56,11 +56,11 @@
   "requirements": [
     {
       "name": "pe",
-      "version_requirement": "3.x"
+      "version_requirement":">= 3.4. <5.0"
     },
     {
       "name": "puppet",
-      "version_requirement": "3.x"
+      "version_requirement":">= 3.4. <5.0"
     }
   ]
 }
