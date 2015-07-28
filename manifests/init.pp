@@ -8,7 +8,7 @@ class httpproxy (
   $profiled = undef,
   $packagemanager = undef,
   $wget = undef
-) inherits httpproxy::params {
+){
 
   # Validates that $http_proxy and $http_proxy_port are domain names and ports respectively.
   if $http_proxy { validate_re($http_proxy, '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$') }
@@ -37,16 +37,7 @@ class httpproxy (
   }
 
   # Boolean parameter for class selection
-  if $profiled = true {
-    contain httpproxy::other::profiled
-  }
-
-  if $packagemanager = true {
-    contain httpproxy::other::packagehandler
-
-  }
-
-  if $wget = true {
-    contain httpproxy::other::wget
-  }
+  if $profiled { contain httpproxy::other::profiled }
+  if $packagemanager { contain httpproxy::other::packagehandler }
+  if $wget { contain httpproxy::other::wget }
 }
