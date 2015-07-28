@@ -11,7 +11,7 @@ class httpproxy::other::apt {
 
   # Sets the proxy using the apt module with settings defined in init.pp. Then includes parent class.
   class { '::apt':
-    proxy_defaults => {
+    proxy => {
       'host'  => $httpproxy::http_proxy,
       'port'  => $httpproxy::http_proxy_port,
       'https' => false
