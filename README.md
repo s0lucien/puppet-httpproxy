@@ -4,62 +4,40 @@ httpproxy
 #### Table of Contents
 
 1. [Overview](#overview)
-2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with miami](#setup)
-    * [What httpproxy affects](#what-httpproxy-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with miami](#beginning-with-httpproxy)
-4. [Usage - Configuration options and additional functionality](#usage)
+2. [Usage - Configuration options and additional functionality](#usage)
     * [Customize the httpproxy options](#customize-the-httpproxy-options)
-    * [Configure with hiera yaml](#configure-with-hiera-yaml)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-    * [Classes](#classes)
-6. [Limitations - OS compatibility, etc.](#limitations)
-7. [Development - Guide for contributing to the module](#development)
-8. [Contributors](#contributors)
+3. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+4. [Limitations - OS compatibility, etc.](#limitations)
+5. [Contributors](#contributors)
 
 ## Overview
 
-Provides a simple way to manage proxies in the profile.d
-
-## Module Description
-
-Using the profiled module written by unibet, a bash script is placed in the
-profile.d directory specifying a desired proxy.
-
-## Setup
-
-### What httpproxy affects
-
-Many programs will check against profile.d for certain defaults. The obvious
-being your default shell.
-
-### Setup Requirements
-
-only need to install the module
-
-### Beginning with httpproxy
+This module was created to streamline proxy management of popular software. It can place and remove
+proxies in profile.d, apt, yum, and wget. Currently only http (no https) proxies are supported.
 
 ## Usage
+    class { '::httpproxy':
+      wget            => true,
+      profiled        => true,
+      packagemanager  => true,
+      http_proxy      => 'my.proxy.com',
+      http_proxy_port => '80'
+    }
 
-### Customize the httpproxy options
-
-### Configure with hiera yaml
+Puppet will manage the proxy for the desired software when its boolean is set to true. When a proxy is entered,
+puppet will ensure that the proxy is present. If a proxy is left undefined, puppet will remove whatever proxy it
+placed (ensure absent). If the boolean is set to false, nothing will be removed or placed.
 
 ## Reference
 
-### Classes
+httpproxy uses the Unibets profile.d management module to manage proxies in profile.d. The puppetlabs/inifile
+resource is used to manage the yum and wget proxies. The apt proxy is managed via the puppetlabs/apt module.
+
+Please contribute, pull requests are welcome. The more proxies that can be managed the better.
 
 ## Limitations
 
-This module has tested against Puppet 3.8.1, CentOS 7, and Ubuntu 14.04.  
-Unibets module has been tested on RedHat 6/7, CentOS 6/7, OracleLinux 6/7.
-
-No plans to support other versions, unless you'd like to help :P
-
-## Development
-
-Pull Requests welcome
+This module has been tested against Puppet 3.8.1, CentOS 7, and Ubuntu 14.04.  
 
 ## Contributors
 
