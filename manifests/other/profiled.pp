@@ -17,7 +17,7 @@ class httpproxy::other::profiled {
   # Script named httpproxy.sh will be placed in profile.d using unibets module.
   # content parameter uses the array $lines, and concatenates the values using a line break
   # shell paramter enables or disables the shabang at the top of the bash script.
-  profiled::script { 'httpproxy.sh':
+  ::profiled::script { 'httpproxy.sh':
     ensure  => $httpproxy::ensure,
     content => join($lines, "\n"),
     shell   => 'absent',
