@@ -7,7 +7,8 @@ class httpproxy (
   $http_proxy_port = undef,
   $profiled = undef,
   $packagemanager = undef,
-  $wget = undef
+  $wget = undef,
+  $preseed = undef,
 ){
 
   # Validates that $http_proxy and $http_proxy_port are domain names and ports respectively.
@@ -40,4 +41,5 @@ class httpproxy (
   if $profiled { contain httpproxy::other::profiled }
   if $packagemanager { contain httpproxy::other::packagehandler }
   if $wget { contain httpproxy::other::wget }
+  if $preseed { contain httpproxy::other::preseed }
 }
