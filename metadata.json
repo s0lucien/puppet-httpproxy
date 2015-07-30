@@ -56,11 +56,11 @@
   "requirements": [
     {
       "name": "pe",
-      "version_requirement":">= 3.4. <5.0"
+      "version_requirement":">= 3.4 <5.0"
     },
     {
       "name": "puppet",
-      "version_requirement":">= 3.4. <5.0"
+      "version_requirement":">= 3.4 <5.0"
     }
   ]
 }
