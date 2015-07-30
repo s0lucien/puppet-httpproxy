@@ -1,6 +1,6 @@
 {
   "name": "MiamiOH-httpproxy",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "author": "Michael Callahan, Chris Edester",
   "summary": "Provides a simple way to manage various proxies",
   "license": "Apache-2.0",

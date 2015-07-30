@@ -1,4 +1,4 @@
-ENV['FUTURE_PARSER'] = 'no'
+ENV['FUTURE_PARSER'] = 'yes'
 
 require 'rubygems' if RUBY_VERSION < '1.9.0'
 # require 'rubocop/rake_task'
