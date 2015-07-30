@@ -7,7 +7,7 @@
 
 # Wrapper class
 class httpproxy::other::preseed {
-  include httpproxy
+  include ::httpproxy
 
   if $httpproxy::preseed { $ensure = absent }
   file { 'apt.conf':

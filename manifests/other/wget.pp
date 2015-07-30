@@ -6,7 +6,7 @@
 
 # Creates a wrapper class to use the ini resource and includes parent class.
 class httpproxy::other::wget {
-  include httpproxy
+  include ::httpproxy
 
   # Writes ini settings defined in init.pp in the wget configuration file.
   ini_setting { 'wget-http_proxy':

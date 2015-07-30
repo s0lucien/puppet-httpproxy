@@ -6,18 +6,17 @@
 
 
 # Wrapper class
-class httpproxy::other::apt (
-  $ensure = undef,
-) {
-  include httpproxy
+class httpproxy::other::apt {
+  include ::httpproxy
+  include ::apt
 
   if $httpproxy::ensure == present { $ensure = file }
+  else { $ensure = absent }
   # Sets the proxy using the apt module with settings defined in init.pp. Then includes parent class.
-  ::apt::setting { 'conf-proxy':
+  apt::setting { 'conf-proxy':
     ensure   => $ensure,
     priority => '01',
     content  => "Acquire::http::Proxy \"${httpproxy::proxy_uri}\";",
   }
-  contain '::apt'
 
 }

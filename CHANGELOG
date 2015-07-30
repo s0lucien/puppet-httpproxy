@@ -1,3 +1,6 @@
+2015-07-30 (0.1.5) Michael Callahan
+        * Fixed misc. bug issues and ran full suite of tests.
+
 2015-07-30 (0.1.4) Michael Callahan
         * Added preseed class. Reworked apt module to work at a lower level.
 

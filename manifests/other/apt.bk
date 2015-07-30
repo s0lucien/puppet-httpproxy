@@ -7,14 +7,14 @@
 
 # Wrapper class
 class httpproxy::other::apt {
-  include httpproxy
+  include ::httpproxy
 
   # Sets the proxy using the apt module with settings defined in init.pp. Then includes parent class.
   class { '::apt':
     proxy => {
       'host'  => $httpproxy::http_proxy,
       'port'  => $httpproxy::http_proxy_port,
-      'https' => false
+      'https' => false,
     }
   }
   contain '::apt'

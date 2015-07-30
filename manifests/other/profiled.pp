@@ -5,13 +5,13 @@
 
 # Creats a wrapper class and includes the parent class
 class httpproxy::other::profiled {
-  include httpproxy
+  include ::httpproxy
 
   # Actual shell script stored in the array $lines.
   $lines = [
     '# Set http proxy for shell',
     "export http_proxy=${httpproxy::proxy_uri}",
-    "export https_proxy=${httpproxy::proxy_uri}"
+    "export https_proxy=${httpproxy::proxy_uri}",
   ]
 
   # Script named httpproxy.sh will be placed in profile.d using unibets module.

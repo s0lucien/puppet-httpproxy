@@ -3,12 +3,12 @@
 
 # Defines the httpproxy class. Sets the $http_proxy and $http_proxy_port variable to null.
 class httpproxy (
-  $http_proxy = undef,
+  $http_proxy      = undef,
   $http_proxy_port = undef,
-  $profiled = undef,
-  $packagemanager = undef,
-  $wget = undef,
-  $preseed = undef,
+  $profiled        = undef,
+  $packagemanager  = undef,
+  $wget            = undef,
+  $preseed         = undef,
 ){
 
   # Validates that $http_proxy and $http_proxy_port are domain names and ports respectively.
@@ -39,7 +39,7 @@ class httpproxy (
 
   # Boolean parameter for class selection
   if $profiled { contain httpproxy::other::profiled }
-  if $packagemanager { contain httpproxy::other::packagehandler }
+  if $packagemanager { contain httpproxy::other::packagemanager }
   if $wget { contain httpproxy::other::wget }
   if $preseed { contain httpproxy::other::preseed }
 }

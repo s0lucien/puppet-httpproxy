@@ -1,5 +1,5 @@
 # This class chooses the appropriate package handler class based on OS distribution
-class httpproxy::other::packagehandler {
+class httpproxy::other::packagemanager {
 
   case $::osfamily {
     'RedHat': {
