@@ -6,15 +6,13 @@
 
 
 # Wrapper class
-class httpproxy::other::preseed (
-  $ensure = undef,
-){
+class httpproxy::other::preseed {
   include httpproxy
 
-  if $httpproxy::preseed { $ensure == absent }
+  if $httpproxy::preseed { $ensure = absent }
   file { 'apt.conf':
     ensure => $ensure,
-    path   => '/etc/apt/',
+    path   => '/etc/apt/apt.conf',
   }
 
 }

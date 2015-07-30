@@ -14,7 +14,7 @@ class httpproxy::other::apt (
   if $httpproxy::ensure == present { $ensure = file }
   # Sets the proxy using the apt module with settings defined in init.pp. Then includes parent class.
   ::apt::setting { 'conf-proxy':
-    ensure   => $ensure
+    ensure   => $ensure,
     priority => '01',
     content  => "Acquire::http::Proxy \"${httpproxy::proxy_uri}\";",
   }
