@@ -6,7 +6,7 @@
 
 
 # Wrapper class
-class httpproxy::other::apt {
+class httpproxy::package::apt {
   include ::httpproxy
   include ::apt
 

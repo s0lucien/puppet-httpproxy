@@ -5,7 +5,7 @@
 # https://forge.puppetlabs.com/puppetlabs/inifile
 
 # Creates a wrapper class to use the ini resource and includes parent class.
-class httpproxy::other::yum {
+class httpproxy::package::yum {
   include ::httpproxy
 
   # Writes ini settings defined in init.pp in the yum configuration file.

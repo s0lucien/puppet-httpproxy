@@ -1,3 +1,4 @@
+# private class
 # This class chooses the appropriate package handler class based on OS distribution
 class httpproxy::other::packagemanager {
 
@@ -7,6 +8,7 @@ class httpproxy::other::packagemanager {
     }
     'Debian': {
       contain '::httpproxy::other::apt'
+      if $httpproxy::purge_apt_conf { contain '::httpproxy::other::purge_apt_conf' }
     }
     default: {fail ('your distro is not supported')}
   }

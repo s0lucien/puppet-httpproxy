@@ -5,15 +5,16 @@
 class httpproxy (
   $http_proxy      = undef,
   $http_proxy_port = undef,
-  $profiled        = undef,
-  $packagemanager  = undef,
-  $wget            = undef,
-  $preseed         = undef,
+  $profiled        = true,
+  $packagemanager  = true,
+  $wget            = false,
+  $purge_apt_conf  = false,
 ){
 
   # Validates that $http_proxy and $http_proxy_port are domain names and ports respectively.
   if $http_proxy { validate_re($http_proxy, '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$') }
   if $http_proxy_port { validate_re($http_proxy_port, '^\d+$') }
+  validate_bool($profiled, $packagemanager, $wget, $purge_apt_conf)
 
   # Checks if $http_proxy contains a string. If $http_proxy is null $ensure is set to absent.
   # If $http_proxy contains a string then $ensure is set to present.
@@ -41,5 +42,4 @@ class httpproxy (
   if $profiled { contain httpproxy::other::profiled }
   if $packagemanager { contain httpproxy::other::packagemanager }
   if $wget { contain httpproxy::other::wget }
-  if $preseed { contain httpproxy::other::preseed }
 }
