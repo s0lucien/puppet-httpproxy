@@ -1,4 +1,4 @@
-# private class
+# Packagemanager.pp (private class)
 # This class chooses the appropriate package handler class based on OS distribution
 class httpproxy::other::packagemanager {
 

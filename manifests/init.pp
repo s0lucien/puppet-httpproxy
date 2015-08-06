@@ -1,6 +1,5 @@
 # init.pp
-# Manages http proxies
-
+# Manages http proxies for various software
 # Defines the httpproxy class. Sets the $http_proxy and $http_proxy_port variable to null.
 class httpproxy (
   $http_proxy      = undef,

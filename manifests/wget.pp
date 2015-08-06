@@ -1,12 +1,8 @@
-# other/wget.pp
+# wget.pp (private class)
 # Manages proxies for the popular wget file downloader
-
-# Uses the puppetlabs/inifile module
+# Uses the puppetlabs/inifile resource
 # https://forge.puppetlabs.com/puppetlabs/inifile
-
-# Creates a wrapper class to use the ini resource and includes parent class.
 class httpproxy::wget {
-  include ::httpproxy
 
   # Writes ini settings defined in init.pp in the wget configuration file.
   ini_setting { 'wget-http_proxy':
@@ -16,6 +12,7 @@ class httpproxy::wget {
     setting => 'http_proxy',
     value   => $httpproxy::proxy_uri,
   }
+  # Writes "https" setting. This module does not support https so it uses whatever is specified for http.
   ini_setting { 'wget-https_proxy':
     ensure  => $httpproxy::ensure,
     path    => '/etc/wgetrc',
