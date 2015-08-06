@@ -1,34 +1,45 @@
 # init.pp
-# Manage http proxies via profiled script
+# Manages http proxies
 
-# Defines the httpproxy class. Sets the $http_proxy variable to the $http_proxy
-# variable located in the params.pp. Then inherits params attributes.
+# Defines the httpproxy class. Sets the $http_proxy and $http_proxy_port variable to null.
 class httpproxy (
-  $http_proxy = $httpproxy::params::http_proxy,
-) inherits httpproxy::params {
+  $http_proxy      = undef,
+  $http_proxy_port = undef,
+  $profiled        = true,
+  $packagemanager  = true,
+  $wget            = false,
+  $purge_apt_conf  = false,
+){
 
-# Uses Selectors, a type of conditional statement to set the ensure parameter.
-# If no proxy is provided (undef), ensure will be set to absent.
-# Otherwise it will default to placing the file.
-  $file_ensure = $http_proxy ? {
+  # Validates that $http_proxy and $http_proxy_port are domain names and ports respectively.
+  if $http_proxy { validate_re($http_proxy, '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$') }
+  if $http_proxy_port { validate_re($http_proxy_port, '^\d+$') }
+  validate_bool($profiled, $packagemanager, $wget, $purge_apt_conf)
+
+  # Checks if $http_proxy contains a string. If $http_proxy is null $ensure is set to absent.
+  # If $http_proxy contains a string then $ensure is set to present.
+  $ensure = $http_proxy ? {
     undef   => 'absent',
-    default => file,
+    default => 'present'
   }
 
-# Actual shell script stored in the array $lines.
-  $lines = [
-    '# Set http proxy for shell',
-    "export http_proxy=${http_proxy}",
-    "export https_proxy=${http_proxy}"
-  ]
-
-# Script named httpproxy.sh will be placed in profile.d using unibets module.
-# content parameter uses the array $lines, and concatenates the values using a line break
-# shell paramter enables or disables the shabang at the top of the bash script.
-  profiled::script { 'httpproxy.sh':
-    ensure  => $file_ensure,
-    content => join($lines, "\n"),
-    shell   => 'absent',
+  # Checks if $http_proxy_port contains a string. If $http_proxy_port is null, $proxy_port_string
+  # is set to null. Otherwise, a colon is added in front of $http_proxy_port and stored in
+  # $proxy_port_string
+  $proxy_port_string = $http_proxy_port ? {
+    undef   => undef,
+    default => ":${http_proxy_port}"
   }
 
+  # Checks if $http_proxy contains a string. If it is null, $proxy_uri is set to null.
+  # Otherwise, it will concatenate $http_proxy and $proxy_port_string.
+  $proxy_uri = $http_proxy ? {
+    undef   => undef,
+    default => "http://${http_proxy}${proxy_port_string}"
+  }
+
+  # Boolean parameter for class selection
+  if $profiled { contain httpproxy::other::profiled }
+  if $packagemanager { contain httpproxy::other::packagemanager }
+  if $wget { contain httpproxy::other::wget }
 }
