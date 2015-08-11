@@ -1,3 +1,6 @@
+2015-08-11 (1.5.0) Michael Callahan
+        * Finished changing directory structure. Added no_proxy parameter. Apt has been updated to use latest release.
+
 2015-07-30 (1.0.1) Michael Callahan
         * Change directory structure and updated purge manifest.
 
