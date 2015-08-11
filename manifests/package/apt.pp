@@ -3,13 +3,12 @@
 # https://forge.puppetlabs.com/puppetlabs/apt
 class httpproxy::package::apt {
 
-  if $httpproxy::ensure == present { $ensure = file }
-  else { $ensure = absent }
+  class { '::apt':
+    proxy => {
+      'ensure' => $httpproxy::ensure,
+      'host'   => $httpproxy::http_proxy,
+      'port'   => $httpproxy::http_proxy_port,
+    },
+  }
 
-  class { 'apt':
-    proxy {
-      ensure => $ensure
-      host => $httpproxy::http_proxy,
-      port => $httpproxy::http_proxy_port,
-    }
 }
