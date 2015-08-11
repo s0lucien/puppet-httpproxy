@@ -11,6 +11,8 @@ httpproxy
 5. [Contributors](#contributors)
 
 ## Overview
+WARNING: This module will default to wiping any proxies in profile.d, apt conf.d, and yum.conf. Pass false to disable
+the module from handling those software packages.
 
 This module was created to streamline proxy management of popular software. It can place and remove
 proxies in profile.d, apt, yum, and wget. Currently only http (no https) proxies are supported.
@@ -27,6 +29,8 @@ proxies in profile.d, apt, yum, and wget. Currently only http (no https) proxies
 Puppet will manage the proxy for the desired software when its boolean is set to true. When a proxy is entered,
 puppet will ensure that the proxy is present. If a proxy is left undefined, puppet will remove whatever proxy it
 placed (ensure absent). If the boolean is set to false, nothing will be removed or placed.
+
+The no_proxy parameter takes a comma separated string of addresses to be ignored by the profile.d proxy.
 
 ## Reference
 
