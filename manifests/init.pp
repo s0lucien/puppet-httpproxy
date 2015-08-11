@@ -4,6 +4,7 @@
 class httpproxy (
   $http_proxy      = undef,
   $http_proxy_port = undef,
+  $no_proxy        = undef,
   $profiled        = true,
   $packagemanager  = true,
   $wget            = false,
