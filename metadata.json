@@ -1,6 +1,6 @@
 {
   "name": "MiamiOH-httpproxy",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "author": "Michael Callahan, Chris Edester",
   "summary": "Provides a simple way to manage various proxies",
   "license": "GPL-3.0+",
@@ -11,8 +11,7 @@
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">=4.1.0 <5.0.0"},
     {"name":"puppetlabs/inifile","version_requirement":">=1.3.0 <2.0.0"},
-    {"name":"unibet/profiled","version_requirement":">=0.1.4 <1.0.0"},
-    {"name":"puppetlabs/apt","version_requirement":">=2.1.1 <3.0.0"}
+    {"name":"unibet/profiled","version_requirement":">=0.1.4 <1.0.0"}
   ],
   "operatingsystem_support": [
     {

@@ -1,3 +1,6 @@
+2015-08-12 (1.5.2)  Chris Edester
+        * Fix Puppetfile 'Could not resolve the dependencies'
+
 2015-08-12 (1.5.1)  Chris Edester
         * Fix Puppetfile 'Could not resolve the dependencies'
 
