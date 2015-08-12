@@ -1,28 +1,31 @@
-2015-08-11 (1.5.0) Michael Callahan
+2015-08-12 (1.5.1)  Chris Edester
+        * Fix Puppetfile 'Could not resolve the dependencies'
+
+2015-08-11 (1.5.0)  Michael Callahan
         * Finished changing directory structure. Added no_proxy parameter. Apt has been updated to use latest release.
 
-2015-07-30 (1.0.1) Michael Callahan
+2015-07-30 (1.0.1)  Michael Callahan
         * Change directory structure and updated purge manifest.
 
-2015-07-30 (1.0.0) Michael Callahan
+2015-07-30 (1.0.0)  Michael Callahan
         * Tweaked Readme. Release to forge.
 
-2015-07-30 (0.1.5) Michael Callahan
+2015-07-30 (0.1.5)  Michael Callahan
         * Fixed misc. bug issues and ran full suite of tests.
 
-2015-07-30 (0.1.4) Michael Callahan
+2015-07-30 (0.1.4)  Michael Callahan
         * Added preseed class. Reworked apt module to work at a lower level.
 
-2015-07-28 (0.1.3) Michael Callahan
+2015-07-28 (0.1.3)  Michael Callahan
         * Fixed many errors. Updated README.
 
-2015-07-27 (0.1.2) Michael Callahan
+2015-07-27 (0.1.2)  Michael Callahan
         * Implemented OS based package handling
 
-2015-07-23 (0.1.1) Michael Callahan
+2015-07-23 (0.1.1)  Michael Callahan
         * Fixed wget path
 
-2015-07-23 (0.1.0) Michael Callahan
+2015-07-23 (0.1.0)  Michael Callahan
         * Moved profiled to its own class. Restructured proxy variables. Setup for public release.
 
 2015-07-08 (0.0.2)  Michael Callahan
