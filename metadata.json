@@ -1,6 +1,6 @@
 {
   "name": "MiamiOH-httpproxy",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "author": "Michael Callahan, Chris Edester",
   "summary": "Provides a simple way to manage various proxies",
   "license": "GPL-3.0+",
