@@ -18,4 +18,3 @@ DEPENDENCIES
   puppetlabs-inifile (< 2.0.0, >= 1.3.0)
   puppetlabs-stdlib (< 5.0.0, >= 4.1.0)
   unibet-profiled (< 1.0.0, >= 0.1.4)
-
