@@ -16,6 +16,7 @@ describe 'httpproxy' do
           it { is_expected.not_to contain_class('httpproxy::package::purge_apt_conf') }
         elsif facts[:osfamily] == 'RedHat'
           it { is_expected.to contain_class('httpproxy::package::yum') }
+          it { is_expected.to contain_class('httpproxy::package::rpm') }
           it { is_expected.not_to contain_class('httpproxy::package::purge_apt_conf') }
         end
         it { is_expected.not_to contain_class('httpproxy::wget') }
@@ -40,6 +41,7 @@ describe 'httpproxy' do
           it { is_expected.to contain_class('httpproxy::package::purge_apt_conf') }
         elsif facts[:osfamily] == 'RedHat'
           it { is_expected.to contain_class('httpproxy::package::yum') }
+          it { is_expected.to contain_class('httpproxy::package::rpm') }
           it { is_expected.not_to contain_class('httpproxy::package::purge_apt_conf') }
         end
         it { is_expected.to contain_class('httpproxy::wget') }
@@ -64,6 +66,7 @@ describe 'httpproxy' do
           it { is_expected.not_to contain_class('httpproxy::package::purge_apt_conf') }
         elsif facts[:osfamily] == 'RedHat'
           it { is_expected.not_to contain_class('httpproxy::package::yum') }
+          it { is_expected.not_to contain_class('httpproxy::package::rpm') }
           it { is_expected.not_to contain_class('httpproxy::package::purge_apt_conf') }
         end
         it { is_expected.not_to contain_class('httpproxy::wget') }

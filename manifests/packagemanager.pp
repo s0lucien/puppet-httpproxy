@@ -4,6 +4,7 @@ class httpproxy::packagemanager {
 
   case $::osfamily {
     'RedHat': {
+      contain '::httpproxy::package::rpm'
       contain '::httpproxy::package::yum'
     }
     'Debian': {
