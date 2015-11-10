@@ -1,6 +1,8 @@
 httpproxy
 =============
 
+[![Build Status](https://travis-ci.org/MiamiOH/puppet-httpproxy.svg?branch=master)](https://travis-ci.org/MiamiOH/puppet-httpproxy)
+
 #### Table of Contents
 
 1. [Overview](#overview)
