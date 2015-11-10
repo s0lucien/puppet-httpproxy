@@ -39,7 +39,7 @@ class httpproxy (
   }
 
   # Boolean parameter for class selection
-  if $profiled { contain ::httpproxy::profiled }
-  if $packagemanager { contain ::httpproxy::packagemanager }
-  if $wget { contain ::httpproxy::wget }
+  if $profiled { contain '::httpproxy::profiled' }
+  if $packagemanager { contain '::httpproxy::packagemanager' }
+  if $wget { contain '::httpproxy::wget' }
 }

@@ -3,6 +3,7 @@
 # Uses the unibet/profiled module
 # https://forge.puppetlabs.com/unibet/profiled
 class httpproxy::profiled {
+
   if $httpproxy::no_proxy {
     $lines = [
       '# Set http proxy for shell',
@@ -25,5 +26,4 @@ class httpproxy::profiled {
     content => join($lines, "\n"),
     shell   => 'absent',
   }
-
 }

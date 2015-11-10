@@ -10,6 +10,5 @@ class httpproxy::package::apt {
       'port'   => $httpproxy::http_proxy_port,
     },
   }
-  contain ::apt
-
+  contain '::apt'
 }

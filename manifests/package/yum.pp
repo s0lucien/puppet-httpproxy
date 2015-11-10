@@ -11,5 +11,4 @@ class httpproxy::package::yum {
     setting => 'proxy',
     value   => $httpproxy::proxy_uri,
   }
-
 }

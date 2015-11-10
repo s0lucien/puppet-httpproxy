@@ -8,9 +8,9 @@ matrix:
   fast_finish: true
   include:
   - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.5.0" FUTURE_PARSER="no"
+    env: PUPPET_GEM_VERSION="~> 3.7.0" FUTURE_PARSER="no"
   - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.5.0" FUTURE_PARSER="yes"
+    env: PUPPET_GEM_VERSION="~> 3.7.0" FUTURE_PARSER="yes"
   - rvm: 1.9.3
     env: PUPPET_GEM_VERSION="~> 3.0" FUTURE_PARSER="no"
   - rvm: 1.9.3
