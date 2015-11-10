@@ -12,7 +12,8 @@ require 'metadata-json-lint/rake_task'
 exclude_paths = [
   'modules/**/*',
   'pkg/**/*',
-  'spec/**/*'
+  'spec/**/*',
+  'vendor/**/*'
 ]
 
 PuppetLint.configuration.fail_on_warnings = true
