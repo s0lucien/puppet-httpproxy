@@ -2,6 +2,11 @@
 # This class chooses the appropriate package handler class based on OS distribution
 class httpproxy::packagemanager {
 
+  $ensure = $httpproxy::packagemanager ? {
+    true    => $httpproxy::ensure,
+    default => $httpproxy::packagemanager,
+  }
+
   case $::osfamily {
     'RedHat': {
       contain '::httpproxy::package::rpm'

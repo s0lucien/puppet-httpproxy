@@ -4,6 +4,11 @@
 # https://forge.puppetlabs.com/unibet/profiled
 class httpproxy::profiled {
 
+  $ensure = $httpproxy::profiled ? {
+    true    => $httpproxy::ensure,
+    default => $httpproxy::profiled,
+  }
+
   if $httpproxy::no_proxy {
     $lines = [
       '# Set http proxy for shell',
@@ -22,7 +27,7 @@ class httpproxy::profiled {
 
   # shell paramter enables or disables the shabang at the top of the bash script.
   profiled::script { 'httpproxy.sh':
-    ensure  => $httpproxy::ensure,
+    ensure  => $ensure,
     content => join($lines, "\n"),
     shell   => 'absent',
   }

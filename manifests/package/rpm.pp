@@ -14,7 +14,7 @@ class httpproxy::package::rpm {
   ]
 
   file { '/etc/rpm/macros.httpproxy':
-    ensure  => $httpproxy::ensure,
+    ensure  => $httpproxy::packagemanager::ensure,
     group   => 'root',
     owner   => 'root',
     mode    => '0644',

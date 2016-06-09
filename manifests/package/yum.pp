@@ -5,7 +5,7 @@
 class httpproxy::package::yum {
 
   ini_setting { 'yum_proxy':
-    ensure  => $httpproxy::ensure,
+    ensure  => $httpproxy::packagemanager::ensure,
     path    => '/etc/yum.conf',
     section => 'main',
     setting => 'proxy',

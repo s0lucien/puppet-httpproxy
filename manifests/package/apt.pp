@@ -5,7 +5,7 @@ class httpproxy::package::apt {
 
   class { '::apt':
     proxy => {
-      'ensure' => $httpproxy::ensure,
+      'ensure' => $httpproxy::packagemanager::ensure,
       'host'   => $httpproxy::http_proxy,
       'port'   => $httpproxy::http_proxy_port,
     },
