@@ -8,16 +8,12 @@ matrix:
   fast_finish: true
   include:
   - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.7.0" FUTURE_PARSER="no"
-  - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.7.0" FUTURE_PARSER="yes"
-  - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.0" FUTURE_PARSER="no"
+    env: PUPPET_GEM_VERSION="~> 3.0"
   - rvm: 1.9.3
     env: PUPPET_GEM_VERSION="~> 3.0" FUTURE_PARSER="yes"
   - rvm: 2.1.7
-    env: PUPPET_GEM_VERSION="~> 3.0" FUTURE_PARSER="no"
-  - rvm: 2.1.7
     env: PUPPET_GEM_VERSION="~> 3.0" FUTURE_PARSER="yes"
+  - rvm: 2.1.7
+    env: PUPPET_GEM_VERSION="~> 4.0" STRICT_VARIABLES="no"
 notifications:
   email: false
