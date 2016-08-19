@@ -12,7 +12,6 @@ class httpproxy (
 ){
 
   # Validates that $http_proxy and $http_proxy_port are domain names and ports respectively.
-  if $http_proxy { validate_re($http_proxy, '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$') }
   if $http_proxy_port { validate_re($http_proxy_port, '^\d+$') }
   validate_bool($purge_apt_conf)
 
